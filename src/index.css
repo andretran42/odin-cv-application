@@ -122,3 +122,45 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+:root {
+  --default-primary-blue: rgb(23, 25, 52);
+  --default-light-greyblue: rgb(224, 230, 239);
+  font-family: "Roboto", "Courier New", Courier, monospace;
+  background-color: var(--default-light-greyblue);
+}
+
+#body_cont {
+  display: flex;
+}
+
+#form_container {
+  width: 35%;
+  margin: 10px;
+}
+
+.general_info,
+.form_div {
+  background-color: white;
+  margin: 5px;
+  border-radius: 20px;
+}
+
+.input_container {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.input_container label {
+  margin-bottom: 4px;
+  color: var(--default-primary-blue);
+}
+
+.first_last {
+  display: flex;
+}
+
+.first_last .input_container {
+  width: 43%;
+}
