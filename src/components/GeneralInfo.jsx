@@ -1,32 +1,6 @@
 import { useState } from "react";
 
-const GenInfo = (props) => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-
-  const handleChange = (e) => {
-    const name = e.target.name;
-    let value = e.target.value;
-
-    switch (name) {
-      case "firstName":
-        setFirstName(value);
-        break;
-      case "lastName":
-        setLastName(value);
-        break;
-      case "Email":
-        setEmail(value);
-        break;
-      case "phoneNumber":
-        setPhoneNumber(value);
-        break;
-    }
-    e.preventDefault();
-  };
-
+const GenInfo = ({ firstName, lastName, email, phoneNumber, onChange }) => {
   return (
     <div class="general_info form_div">
       <div class="first_last">
@@ -38,7 +12,7 @@ const GenInfo = (props) => {
             placeholder="First"
             id="firstName"
             value={firstName}
-            onChange={handleChange}
+            onChange={onChange}
           ></input>
         </div>
         <div className="input_container">
@@ -49,7 +23,7 @@ const GenInfo = (props) => {
             placeholder="Last"
             id="lastName"
             value={lastName}
-            onChange={handleChange}
+            onChange={onChange}
           ></input>
         </div>
       </div>
@@ -60,7 +34,7 @@ const GenInfo = (props) => {
           name="Email"
           placeHolder="firstlast@example.com"
           value={email}
-          onChange={handleChange}
+          onChange={onChange}
         ></input>
       </div>
       <div className="input_container">
@@ -70,7 +44,7 @@ const GenInfo = (props) => {
           name="phoneNumber"
           placeHolder="###-###-####"
           value={phoneNumber}
-          onChange={handleChange}
+          onChange={onChange}
         ></input>
       </div>
     </div>
