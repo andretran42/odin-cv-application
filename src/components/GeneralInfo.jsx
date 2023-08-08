@@ -6,6 +6,27 @@ const GenInfo = (props) => {
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
+  const handleChange = (e) => {
+    const name = e.target.name;
+    let value = e.target.value;
+
+    switch (name) {
+      case "firstName":
+        setFirstName(value);
+        break;
+      case "lastName":
+        setLastName(value);
+        break;
+      case "Email":
+        setEmail(value);
+        break;
+      case "phoneNumber":
+        setPhoneNumber(value);
+        break;
+    }
+    e.preventDefault();
+  };
+
   return (
     <div class="general_info form_div">
       <div class="first_last">
@@ -17,6 +38,7 @@ const GenInfo = (props) => {
             placeholder="First"
             id="firstName"
             value={firstName}
+            onChange={handleChange}
           ></input>
         </div>
         <div className="input_container">
@@ -27,16 +49,18 @@ const GenInfo = (props) => {
             placeholder="Last"
             id="lastName"
             value={lastName}
+            onChange={handleChange}
           ></input>
         </div>
       </div>
       <div className="input_container">
         <label htmlFor="email">Email:</label>
         <input
-          type="text"
-          name="firstName"
+          type="email"
+          name="Email"
           placeHolder="firstlast@example.com"
           value={email}
+          onChange={handleChange}
         ></input>
       </div>
       <div className="input_container">
@@ -46,6 +70,7 @@ const GenInfo = (props) => {
           name="phoneNumber"
           placeHolder="###-###-####"
           value={phoneNumber}
+          onChange={handleChange}
         ></input>
       </div>
     </div>

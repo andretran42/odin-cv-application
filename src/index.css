@@ -164,3 +164,7 @@ table {
 .first_last .input_container {
   width: 43%;
 }
+
+.start_end {
+  display: flex;
+}
