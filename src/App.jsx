@@ -3,6 +3,8 @@ import GenInfo from "./components/GeneralInfo.jsx";
 import Education from "./components/Education.jsx";
 import Header from "./components/Header.jsx";
 import EducationSection from "./components/EducationSection.jsx";
+import Experience from "./components/Experience.jsx";
+import ExperienceSection from "./components/ExperienceSection.jsx";
 
 function App() {
   const [firstName, setFirstName] = useState("");
@@ -14,6 +16,11 @@ function App() {
   const [Location, setLocation] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
+  const [expStartDate, setExpStartDate] = useState("");
+  const [expEndDate, setExpEndDate] = useState("");
+  const [company, setCompany] = useState("");
+  const [jobTitle, setJobTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -47,6 +54,22 @@ function App() {
       case "endDate":
         setEndDate(value);
         break;
+      case "expStartDate":
+        setExpStartDate(value);
+        break;
+      case "expEndDate":
+        setExpEndDate(value);
+        break;
+      case "Company":
+        setCompany(value);
+        break;
+      case "jobTitle":
+        setJobTitle(value);
+        break;
+      case "description":
+        console.log(e);
+        setDescription(value);
+        break;
     }
     e.preventDefault();
   };
@@ -69,6 +92,14 @@ function App() {
           endDate={endDate}
           onChange={handleChange}
         />
+        <Experience
+          startDate={expStartDate}
+          endDate={expEndDate}
+          Company={company}
+          jobTitle={jobTitle}
+          description={description}
+          onChange={handleChange}
+        />
       </div>
       <div id="cv_container">
         <Header
@@ -83,6 +114,13 @@ function App() {
           Location={Location}
           startDate={startDate}
           endDate={endDate}
+        />
+        <ExperienceSection
+          startDate={expStartDate}
+          endDate={expEndDate}
+          Company={company}
+          jobTitle={jobTitle}
+          description={description}
         />
       </div>
     </div>

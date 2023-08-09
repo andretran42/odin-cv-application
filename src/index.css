@@ -211,7 +211,8 @@ table {
   font-weight: 700;
 }
 
-.education_details {
+.education_details,
+.experience_details {
   display: flex;
   flex-direction: column;
   margin-left: 25px;
@@ -221,24 +222,32 @@ table {
   height: 13em;
 }
 
-.degree {
+.degree,
+.jobTitle {
   font-style: italic;
   width: 100%;
   font-size: 1.2em;
   font-weight: 300;
 }
 
-.school_dates_container {
+.school_dates_container,
+.company_dates_container {
   display: flex;
 }
 
-.school {
+.school,
+.Company {
   width: 82%;
   font-size: 1.4em;
   font-weight: 700;
 }
 
-.dates {
+.dates,
+.expDates {
   font-size: 1.1em;
   font-weight: 300;
+}
+
+#description {
+  height: 125px;
 }
