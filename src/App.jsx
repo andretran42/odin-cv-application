@@ -2,12 +2,18 @@ import { useState } from "react";
 import GenInfo from "./components/GeneralInfo.jsx";
 import Education from "./components/Education.jsx";
 import Header from "./components/Header.jsx";
+import EducationSection from "./components/EducationSection.jsx";
 
 function App() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [Degree, setDegree] = useState("");
+  const [School, setSchool] = useState("");
+  const [Location, setLocation] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -26,6 +32,21 @@ function App() {
       case "phoneNumber":
         setPhoneNumber(value);
         break;
+      case "Degree":
+        setDegree(value);
+        break;
+      case "School":
+        setSchool(value);
+        break;
+      case "Location":
+        setLocation(value);
+        break;
+      case "startDate":
+        setStartDate(value);
+        break;
+      case "endDate":
+        setEndDate(value);
+        break;
     }
     e.preventDefault();
   };
@@ -40,7 +61,14 @@ function App() {
           phoneNumber={phoneNumber}
           onChange={handleChange}
         />
-        <Education />
+        <Education
+          Degree={Degree}
+          School={School}
+          Location={Location}
+          startDate={startDate}
+          endDate={endDate}
+          onChange={handleChange}
+        />
       </div>
       <div id="cv_container">
         <Header
@@ -48,6 +76,13 @@ function App() {
           lastName={lastName}
           email={email}
           phoneNumber={phoneNumber}
+        />
+        <EducationSection
+          Degree={Degree}
+          School={School}
+          Location={Location}
+          startDate={startDate}
+          endDate={endDate}
         />
       </div>
     </div>

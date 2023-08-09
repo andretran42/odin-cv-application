@@ -1,35 +1,14 @@
 import { useState } from "react";
 
-const Education = (props) => {
-  const [Degree, setDegree] = useState("");
-  const [School, setSchool] = useState("");
-  const [Location, setLocation] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-
-  const handleChange = (e) => {
-    const name = e.target.name;
-    let value = e.target.value;
-    switch (name) {
-      case "Degree":
-        setDegree(value);
-        break;
-      case "School":
-        setSchool(value);
-        break;
-      case "Location":
-        setLocation(value);
-        break;
-      case "startDate":
-        setStartDate(value);
-        break;
-      case "endDate":
-        setEndDate(value);
-        break;
-    }
-    e.preventDefault();
-  };
-
+const Education = ({
+  Degree,
+  School,
+  Location,
+  startDate,
+  endDate,
+  onChange,
+}) => {
+  Degree, School, Location, startDate, endDate, onChange;
   return (
     <div className="education form_div">
       <div class="input_container">
@@ -40,7 +19,7 @@ const Education = (props) => {
           placeholder="Degree / Major"
           id="Degree"
           value={Degree}
-          onChange={handleChange}
+          onChange={onChange}
         ></input>
       </div>
       <div class="input_container">
@@ -51,7 +30,7 @@ const Education = (props) => {
           placeholder="School / University"
           id="School"
           value={School}
-          onChange={handleChange}
+          onChange={onChange}
         ></input>
       </div>
       <div class="input_container">
@@ -62,7 +41,7 @@ const Education = (props) => {
           placeholder="Example City, EX"
           id="Location"
           value={Location}
-          onChange={handleChange}
+          onChange={onChange}
         ></input>
       </div>
       <div class="start_end">
@@ -74,7 +53,7 @@ const Education = (props) => {
             placeholder="mm/yyyy"
             id="startDate"
             value={startDate}
-            onChange={handleChange}
+            onChange={onChange}
           ></input>
         </div>
         <div class="input_container">
@@ -85,7 +64,7 @@ const Education = (props) => {
             placeholder="mm/yyyy"
             id="endDate"
             value={endDate}
-            onChange={handleChange}
+            onChange={onChange}
           ></input>
         </div>
       </div>
